@@ -1,6 +1,0 @@
-D:\Game Development\XNADependency\XNADependency\bin\x86\Debug\XNADependency.dll
-D:\Game Development\XNADependency\XNADependency\bin\x86\Debug\XNADependency.pdb
-D:\Game Development\XNADependency\XNADependency\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\Game Development\XNADependency\XNADependency\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-D:\Game Development\XNADependency\XNADependency\obj\x86\Debug\XNADependency.dll
-D:\Game Development\XNADependency\XNADependency\obj\x86\Debug\XNADependency.pdb
