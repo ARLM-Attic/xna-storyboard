@@ -9,7 +9,7 @@ namespace XNAStoryboard
     public class Storyboard : GameComponent
     {
         #region Children
-        public List<Timeline> Children
+        public List<ITimeline> Children
         {
             get;
             private set;
@@ -25,7 +25,7 @@ namespace XNAStoryboard
             : base( game )
         {
             game.Components.Add( this );
-            this.Children = new List<Timeline>();
+            this.Children = new List<ITimeline>();
         }
 
         public void Begin()
@@ -43,7 +43,7 @@ namespace XNAStoryboard
 
             this.Children.ForEach( a =>
             {
-                if ( a.IsFinished )
+                if ( a.GetIsFinisihed() )
                     finishedCount++;
                 else
                     a.Update( gameTime.ElapsedGameTime );

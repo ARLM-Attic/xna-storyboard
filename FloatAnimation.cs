@@ -6,7 +6,7 @@ using XNAStoryboard.Tweens;
 
 namespace XNAStoryboard
 {
-    public class FloatAnimation : Timeline
+    public class FloatAnimation : Timeline<float>
     {
         #region To
         public float To
@@ -32,13 +32,16 @@ namespace XNAStoryboard
             this.IsFinished = false;
         }
 
-        override internal void Begin()
+        public override void Begin()
         {
-            this.currentValue = ( this.From.HasValue ? this.From.Value : this.Target.GetValue<float>( this.TargetProperty ) );
-            this.From = this.currentValue;
+            if ( this.TargetProperty != null )
+            {
+                this.currentValue = ( this.From.HasValue ? this.From.Value : this.Target.GetValue<float>( this.TargetProperty ) );
+                this.From = this.currentValue;
+            }
         }
 
-        override internal void Update( TimeSpan timePast )
+        public override void Update( TimeSpan timePast )
         {
             TimeSpan timeElapsed = timePast + this.lastTime;
 
@@ -49,7 +52,12 @@ namespace XNAStoryboard
             }
 
             this.currentValue = this.EasingFunction.Tween( timeElapsed.TotalSeconds, this.From.Value, this.To - this.From.Value, this.Duration.TotalSeconds );
-            this.Target.SetValue( this.TargetProperty, this.currentValue );
+
+            if ( this.Target != null )
+                this.Target.SetValue( this.TargetProperty, this.currentValue );
+            else if ( this.TargetAction != null )
+                this.TargetAction.Invoke( this.currentValue );
+
 
             this.lastTime = timeElapsed;
         }

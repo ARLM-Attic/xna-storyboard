@@ -7,7 +7,7 @@ using XNAStoryboard.Tweens;
 
 namespace XNAStoryboard
 {
-    public class Vector2Animation : Timeline
+    public class Vector2Animation : Timeline<Vector2>
     {
         #region To
         public Vector2 To
@@ -33,13 +33,13 @@ namespace XNAStoryboard
             this.IsFinished = false;
         }
 
-        override internal void Begin()
+        public override void Begin()
         {
             this.currentValue = ( this.From.HasValue ? this.From.Value : this.Target.GetValue<Vector2>( this.TargetProperty ) );
             this.From = this.currentValue;
         }
 
-        override internal void Update( TimeSpan timePast )
+        public override void Update( TimeSpan timePast )
         {
             TimeSpan timeElapsed = timePast + this.lastTime;
 

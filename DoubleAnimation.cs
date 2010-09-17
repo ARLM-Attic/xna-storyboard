@@ -6,7 +6,7 @@ using XNAStoryboard.Tweens;
 
 namespace XNAStoryboard
 {
-    public class DoubleAnimation : Timeline
+    public class DoubleAnimation : Timeline<double>
     {
         #region To
         public double To
@@ -32,13 +32,13 @@ namespace XNAStoryboard
             this.IsFinished = false;
         }
 
-        override internal void Begin()
+        public override void Begin()
         {
             this.currentValue = ( this.From.HasValue ? this.From.Value : this.Target.GetValue<double>( this.TargetProperty ) );
             this.From = this.currentValue;
         }
 
-        override internal void Update( TimeSpan timePast )
+        public override void Update( TimeSpan timePast )
         {
             TimeSpan timeElapsed = timePast + this.lastTime;
 

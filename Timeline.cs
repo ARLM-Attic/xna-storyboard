@@ -6,7 +6,7 @@ using XNAStoryboard.Tweens;
 
 namespace XNAStoryboard
 {
-    public class Timeline
+    public class Timeline<T> : ITimeline
     {
         #region Target
         public DependencyObject Target
@@ -48,6 +48,14 @@ namespace XNAStoryboard
         }
         #endregion
 
+        #region TargetAction
+        public Action<T> TargetAction
+        {
+            get;
+            set;
+        }
+        #endregion
+
         public Timeline()
         {
             this.EasingFunction = new Linear()
@@ -56,14 +64,19 @@ namespace XNAStoryboard
             };
         }
 
-        internal virtual void Begin()
+        public virtual void Begin()
         {
-
+            throw new NotImplementedException();
         }
 
-        internal virtual void Update( TimeSpan timePast )
+        public virtual void Update( TimeSpan timePast )
         {
+            throw new NotImplementedException();
+        }
 
+        public bool GetIsFinisihed()
+        {
+            return this.IsFinished;
         }
     }
 }

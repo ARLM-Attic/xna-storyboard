@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace XNAStoryboard
 {
-    public class ColorAnimation : Timeline
+    public class ColorAnimation : Timeline<Color>
     {
         #region To
         public Color To
@@ -34,13 +34,13 @@ namespace XNAStoryboard
             this.IsFinished = false;
         }
 
-        override internal void Begin()
+        public override void Begin()
         {
             this.currentValue = ( this.From.HasValue ? this.From.Value : this.Target.GetValue<Color>( this.TargetProperty ) );
             this.From = this.currentValue;
         }
 
-        override internal void Update( TimeSpan timePast )
+        public override void Update( TimeSpan timePast )
         {
             TimeSpan timeElapsed = timePast + this.lastTime;
 
