@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Content;
 
 namespace XNAStoryboard
 {
@@ -11,7 +12,7 @@ namespace XNAStoryboard
         public string Name
         {
             get;
-            private set;
+            set;
         }
         #endregion
 
@@ -19,7 +20,7 @@ namespace XNAStoryboard
         public Type PropertyType
         {
             get;
-            private set;
+            set;
         }
         #endregion
 
@@ -27,7 +28,7 @@ namespace XNAStoryboard
         public Type OwnerType
         {
             get;
-            private set;
+            set;
         }
         #endregion
 
@@ -62,6 +63,11 @@ namespace XNAStoryboard
                 return false;
 
             return ( dp.Name == this.Name && dp.OwnerType == this.OwnerType && dp.PropertyType == dp.PropertyType );
+        }
+
+        public override string ToString()
+        {
+            return this.Name + " : " + this.PropertyType.ToString();
         }
     }
 }

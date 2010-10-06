@@ -52,7 +52,10 @@ namespace XNAStoryboard
             this.currentValue = new Vector2( this.EasingFunction.Tween( timeElapsed.TotalSeconds, this.From.Value.X, this.To.X - this.From.Value.X, this.Duration.TotalSeconds ),
                                              this.EasingFunction.Tween( timeElapsed.TotalSeconds, this.From.Value.Y, this.To.Y - this.From.Value.Y, this.Duration.TotalSeconds ) );
 
-            this.Target.SetValue( this.TargetProperty, this.currentValue );
+            if ( this.Target != null )
+                this.Target.SetValue( this.TargetProperty, this.currentValue );
+            else if ( this.TargetAction != null )
+                this.TargetAction.Invoke( this.currentValue );
 
             this.lastTime = timeElapsed;
         }

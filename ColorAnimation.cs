@@ -58,7 +58,10 @@ namespace XNAStoryboard
                                            this.EasingFunction.Tween( timeElapsed.TotalSeconds, fromValues.Z, toValues.Z - fromValues.Z, this.Duration.TotalSeconds ),
                                            this.EasingFunction.Tween( timeElapsed.TotalSeconds, fromValues.W, toValues.W - fromValues.W, this.Duration.TotalSeconds ) );
 
-            this.Target.SetValue( this.TargetProperty, this.currentValue );
+            if ( this.Target != null )
+                this.Target.SetValue( this.TargetProperty, this.currentValue );
+            else if ( this.TargetAction != null )
+                this.TargetAction.Invoke( this.currentValue );
 
             this.lastTime = timeElapsed;
         }

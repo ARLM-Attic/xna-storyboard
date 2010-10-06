@@ -1,1 +1,2 @@
 D:\Game Development\XNADependency\XNADependency\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Game Development\XNADependency\XNAStoryboard\Content\obj\x86\Debug\ResolveAssemblyReference.cache

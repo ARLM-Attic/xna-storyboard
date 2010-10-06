@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Content;
 
 namespace XNAStoryboard
 {
@@ -9,7 +10,11 @@ namespace XNAStoryboard
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Dictionary<DependencyProperty, object> properties = null;
+        private Dictionary<object, object> properties = new Dictionary<object, object>();
+
+        public DependencyObject()
+        {
+        }
 
         public object GetValue( DependencyProperty property )
         {
@@ -29,9 +34,6 @@ namespace XNAStoryboard
 
         public void SetValue( DependencyProperty property, object value )
         {
-            if ( this.properties == null )
-                this.properties = new Dictionary<DependencyProperty, object>();
-
             if ( this.properties.ContainsKey( property ) )
             {
                 this.properties[ property ] = value;

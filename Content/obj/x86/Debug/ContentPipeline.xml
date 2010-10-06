@@ -6,10 +6,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\Game Development\XNADependency\XNADependency\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\Game Development\XNADependency\XNADependency\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\Game Development\XNADependency\XNADependency\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\Game Development\XNADependency\XNADependency\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Game Development\XNADependency\XNAStoryboard\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Game Development\XNADependency\XNAStoryboard\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Game Development\XNADependency\XNAStoryboard\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Game Development\XNADependency\XNAStoryboard\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

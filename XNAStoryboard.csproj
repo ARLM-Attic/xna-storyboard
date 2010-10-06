@@ -42,7 +42,7 @@
     <XnaCompressContent>false</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\x86\Release</OutputPath>
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorAnimation.cs" />
+    <Compile Include="ITimeline.cs" />
     <Compile Include="Size.cs" />
     <Compile Include="SizeAnimation.cs" />
     <Compile Include="DoubleAnimation.cs" />
